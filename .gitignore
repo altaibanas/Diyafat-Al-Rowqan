@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build & Hosting Output
+/dist/
+/dist-ssr/
+/.vercel/
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Offline Print, PDF & Raw Design Archives (only website files are pushed for Vercel)
+/*.pdf
+/assets/
+/brand-kit/
+/design/
+/print-collateral/
+
+# Logs & Temp Files
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.cmyk_tmp.*
+
+# OS / Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
