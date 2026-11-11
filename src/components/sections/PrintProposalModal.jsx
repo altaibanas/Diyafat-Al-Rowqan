@@ -46,7 +46,7 @@ export function PrintProposalModal({ isOpen, onClose, proposalData }) {
       aria-modal="true"
       aria-labelledby="proposal-modal-title"
       onClick={onClose}
-      className="fixed inset-0 z-50 overflow-y-auto bg-navy-950/88 flex items-start justify-center p-3 sm:p-6 print:p-0 print:bg-white cursor-pointer"
+      className="fixed inset-0 z-50 overflow-y-auto bg-navy-950/90 flex items-start justify-center p-3 sm:p-6 print:p-0 print:bg-white cursor-pointer"
     >
       {/* Modal Dialog Container */}
       <div

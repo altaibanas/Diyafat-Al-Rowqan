@@ -289,7 +289,7 @@ export function RoyalEventGallery({ onOpenBeverageModal, onRequestSimilar }) {
         >
           <div
             onClick={closeLightbox}
-            className="fixed inset-0 bg-navy-950/92"
+            className="fixed inset-0 bg-navy-950/95"
             aria-hidden="true"
           />
 

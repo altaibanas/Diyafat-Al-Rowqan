@@ -26,7 +26,7 @@ export function BeverageModal({ isOpen, onClose }) {
         {/* Backdrop */}
         <div
           onClick={onClose}
-          className="fixed inset-0 bg-navy-950/88"
+          className="fixed inset-0 bg-navy-950/90"
         />
 
         {/* Modal Window Container */}

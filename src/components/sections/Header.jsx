@@ -86,8 +86,8 @@ export function Header({ onOpenBeverageModal }) {
           headerVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
         } ${
           scrolled
-            ? 'bg-navy-royal/98 shadow-palace border-b border-gold-royal/35 py-2.5 sm:py-3'
-            : 'bg-gradient-to-b from-navy-950/95 via-navy-royal/85 to-transparent py-3 sm:py-4'
+            ? 'bg-navy-royal shadow-palace border-b border-gold-royal/35 py-2.5 sm:py-3'
+            : 'bg-gradient-to-b from-navy-950 via-navy-royal/90 to-transparent py-3 sm:py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -220,17 +220,17 @@ export function Header({ onOpenBeverageModal }) {
         />
       </header>
 
-      {/* Mobile Drawer (with dedicated X Close Button & Auto-Close on Scroll) */}
+      {/* Mobile Drawer (Solid Midnight Navy background, X Close Button & Auto-Close on Scroll) */}
       {mobileMenuOpen && (
         <div
           id="mobile-nav-drawer"
           role="dialog"
           aria-modal="true"
           aria-label="قائمة التنقل الرئيسية"
-          className="fixed inset-0 z-50 md:hidden bg-navy-950/98 flex flex-col justify-between border-b border-gold-royal/30 animate-fadeIn"
+          className="fixed inset-0 z-50 md:hidden bg-navy-950 flex flex-col justify-between overflow-y-auto animate-panel-in"
         >
           {/* Top Bar of Drawer with Dedicated X Close Button */}
-          <div className="p-4 sm:p-6 border-b border-gold-royal/20 flex items-center justify-between">
+          <div className="p-4 sm:p-6 bg-navy-royal border-b border-gold-royal/30 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-2">
               <NajdiStar size={18} color="#C89B43" />
               <span className="font-amiri text-lg font-bold text-gold-champagne">
@@ -242,25 +242,25 @@ export function Header({ onOpenBeverageModal }) {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 rounded-full bg-navy-elevated border border-gold-royal/40 text-gold-champagne hover:bg-gold-royal/20 hover:scale-105 active:scale-95 transition-all shadow-sm"
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 rounded-full bg-navy-elevated border border-gold-royal/50 text-gold-champagne hover:bg-gold-royal hover:text-navy-950 active:scale-95 transition-all duration-300 shadow-sm cursor-pointer"
               aria-label="إغلاق القائمة"
             >
-              <X className="w-6 h-6 text-gold-champagne" aria-hidden="true" />
+              <X className="w-6 h-6" aria-hidden="true" />
             </button>
           </div>
 
           {/* Navigation Links */}
-          <div className="px-6 py-6 overflow-y-auto space-y-3">
-            <div className="text-right pb-3 border-b border-gold-royal/10">
+          <div className="px-6 py-6 flex-1 overflow-y-auto space-y-3 bg-navy-950">
+            <div className="text-right pb-3 border-b border-gold-royal/20">
               <span className="text-xs font-tajawal text-gold-royal font-bold block">
-                تصفح أقسام الصرح
+                تصفح أقسام الموقع
               </span>
-              <span className="text-[11px] font-tajawal text-alabaster-cotton/60">
+              <span className="text-[11px] font-tajawal text-alabaster-cotton/70">
                 (تُغلق القائمة تلقائياً عند التمرير أو اختيار وجهتك)
               </span>
             </div>
 
-            <nav className="flex flex-col space-y-1">
+            <nav className="flex flex-col space-y-1.5">
               {navLinks.map((link, idx) => (
                 link.onClick ? (
                   <button
@@ -270,20 +270,20 @@ export function Header({ onOpenBeverageModal }) {
                       link.onClick();
                       setMobileMenuOpen(false);
                     }}
-                    className="p-3 text-right font-tajawal text-base text-alabaster-cotton hover:text-gold-champagne hover:bg-gold-royal/10 rounded-sm border-b border-gold-royal/10 transition-colors flex items-center justify-between"
+                    className="p-3.5 text-right font-tajawal text-base font-medium text-alabaster-cotton bg-navy-royal/70 hover:text-gold-champagne hover:bg-navy-elevated rounded-sm border border-gold-royal/20 transition-all duration-300 flex items-center justify-between cursor-pointer"
                   >
                     <span>{link.label}</span>
-                    <ArrowLeft className="w-4 h-4 text-gold-royal/60" />
+                    <ArrowLeft className="w-4 h-4 text-gold-royal" />
                   </button>
                 ) : (
                   <a
                     key={idx}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="p-3 text-right font-tajawal text-base text-alabaster-cotton hover:text-gold-champagne hover:bg-gold-royal/10 rounded-sm border-b border-gold-royal/10 transition-colors flex items-center justify-between"
+                    className="p-3.5 text-right font-tajawal text-base font-medium text-alabaster-cotton bg-navy-royal/70 hover:text-gold-champagne hover:bg-navy-elevated rounded-sm border border-gold-royal/20 transition-all duration-300 flex items-center justify-between"
                   >
                     <span>{link.label}</span>
-                    <ArrowLeft className="w-4 h-4 text-gold-royal/60" />
+                    <ArrowLeft className="w-4 h-4 text-gold-royal" />
                   </a>
                 )
               ))}
@@ -291,7 +291,7 @@ export function Header({ onOpenBeverageModal }) {
           </div>
 
           {/* Bottom Drawer Actions */}
-          <div className="p-6 border-t border-gold-royal/20 bg-navy-elevated/60 space-y-3">
+          <div className="p-6 border-t border-gold-royal/30 bg-navy-royal space-y-3 shrink-0">
             <button
               type="button"
               aria-pressed={ambianceActive}
